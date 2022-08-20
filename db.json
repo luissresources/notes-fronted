@@ -1,0 +1,58 @@
+{
+  "notes": [
+    {
+      "content": "Roadmap",
+      "date": "2022-07-28T18:58:03.508Z",
+      "important": false,
+      "id": 13
+    },
+    {
+      "content": "Javascript",
+      "date": "2022-07-28T18:59:06.935Z",
+      "important": true,
+      "id": 14
+    },
+    {
+      "content": "React",
+      "date": "2022-07-28T18:59:36.707Z",
+      "important": false,
+      "id": 15
+    },
+    {
+      "content": "Html5",
+      "date": "2022-07-28T19:00:17.874Z",
+      "important": false,
+      "id": 16
+    },
+    {
+      "content": "Css",
+      "date": "2022-07-28T19:00:21.986Z",
+      "important": false,
+      "id": 17
+    },
+    {
+      "content": "JS",
+      "date": "2022-07-28T19:00:29.425Z",
+      "important": false,
+      "id": 18
+    },
+    {
+      "content": "Python",
+      "date": "2022-07-28T19:00:38.753Z",
+      "important": false,
+      "id": 19
+    },
+    {
+      "content": "Node",
+      "date": "2022-07-28T19:01:25.069Z",
+      "important": true,
+      "id": 20
+    },
+    {
+      "content": "Express",
+      "date": "2022-07-28T19:01:29.002Z",
+      "important": true,
+      "id": 21
+    }
+  ]
+}
