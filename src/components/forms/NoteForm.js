@@ -1,32 +1,6 @@
-import React, { useState } from 'react'
-import noteService from '../../services/notes'
+import React from 'react'
 
-const NoteForm = ({ handleNotes, handleShowAll }) => {
-
-  const [newNote, setNewNote] = useState('')
-
-  const addNote = (e) => {
-    e.preventDefault()
-    const noteObject = {
-      content: newNote,
-      date: new Date().toISOString(),
-      important: Math.random() < 0.5,
-    }
-
-    noteService
-      .create(noteObject)
-      .then( () => {
-        noteService
-          .getAll()
-          .then(response => {
-            handleNotes(response)
-          })
-        handleShowAll(false)
-        setNewNote('')
-      })
-  }
-
-  const handleNoteChange = e => setNewNote(e.target.value)
+const NoteForm = ({ addNote, newNote, handleNoteChange }) => {
 
   return (
     <div className='formDiv'>
