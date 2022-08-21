@@ -34,30 +34,6 @@ const App = () => {
       noteService.setToken(user.token)
     }
   }, [])
-  
-  const handleNoteChange = e => setNewNote(e.target.value)
-
-  const addNote = (e) => {
-    e.preventDefault();
-    const noteObject = {
-      content: newNote,
-      date: new Date().toISOString(),
-      important: Math.random() < 0.5,
-    }
-
-    noteService 
-    .create(noteObject)
-      .then(returnedNote => {
-        // setNotes(notes.concat(returnedNote.data))
-        noteService
-        .getAll()
-        .then(response => {
-          setNotes(response)
-        })
-        setShowAll(false)
-        setNewNote('')
-      })
-  }
 
   const toggleImportanceOf = id => {
     const note = notes.find(n => n.id === id)
@@ -157,9 +133,8 @@ const App = () => {
             </div>
             <Togglable buttonLabel='new note'>
               <NoteForm 
-                addNote = { addNote }
-                newNote = { newNote }
-                handleNoteChange = { handleNoteChange }
+                handleNotes = {(notes) => setNotes(notes)}
+                handleShowAll = {(all) => setShowAll(all)}
               />
             </Togglable>
           </div>
