@@ -17,7 +17,7 @@ const create = async newObject => {
   // return axios.post(baseUrl, newObject)
 
   const config = {
-    headers: { Authorization : token}
+    headers: { Authorization : token }
   }
 
   const response = await axios.post(baseUrl, newObject, config)
@@ -31,4 +31,4 @@ const update = (id, newObject) => {
 
 const noteService = { getAll, create, update, setToken }
 
-export default noteService;
+export default noteService

@@ -37,14 +37,7 @@ const App = () => {
 
   const handleNoteChange = e => setNewNote(e.target.value)
 
-  const addNote = (e) => {
-    e.preventDefault()
-    const noteObject = {
-      content: newNote,
-      date: new Date().toISOString(),
-      important: Math.random() < 0.5,
-    }
-
+  const addNote = (noteObject) => {
     noteService
       .create(noteObject)
       .then( () => {
@@ -57,7 +50,6 @@ const App = () => {
         setNewNote('')
       })
   }
-
 
   const toggleImportanceOf = id => {
     const note = notes.find(n => n.id === id)
@@ -156,7 +148,7 @@ const App = () => {
           </div>
           <Togglable buttonLabel='new note'>
             <NoteForm
-              addNote = {addNote}
+              createNote = {(newObject) => addNote(newObject)}
               handleNoteChange= {handleNoteChange}
               newNote={newNote}
             />

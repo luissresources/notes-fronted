@@ -1,6 +1,16 @@
 import React from 'react'
 
-const NoteForm = ({ addNote, newNote, handleNoteChange }) => {
+const NoteForm = ({ createNote, newNote, handleNoteChange }) => {
+
+  const addNote = e => {
+    e.preventDefault()
+    createNote ({
+      content: newNote,
+      date: new Date().toISOString(),
+      // important: Math.random() < 0.5,
+      important: false
+    })
+  }
 
   return (
     <div className='formDiv'>
@@ -9,8 +19,9 @@ const NoteForm = ({ addNote, newNote, handleNoteChange }) => {
         <input
           value={newNote}
           onChange={handleNoteChange}
+          id="inputNewNote"
         />
-        <button type="submit">save</button>
+        <button type="submit" id="inputSavedNote">save</button>
       </form>
     </div>
   )
